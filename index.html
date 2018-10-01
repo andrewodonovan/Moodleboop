@@ -1,0 +1,17 @@
+<html>
+    <body>
+		{% if linklistOutput %}
+		{% load link_tags %}
+			<ul>
+				{% for link in linklistOutput %}
+					<li>{{ link | safe }}</li>
+					{% autoescape off %}
+						{% get_links link requests %}
+					{% endautoescape %}
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>No jobs on moodle</p>
+		{% endif %}
+    </body>
+</html>
