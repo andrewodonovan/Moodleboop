@@ -22,7 +22,7 @@ def index(request):
     for x in range (0, len(LinkData)):
         if "resource" not in LinkData[x].get("href") and "Assignment" not in NameData[x]:
             #data+= ("<h3><b><a href='" + LinkData[x].get("href") + "'>" + NameData[x] + "</a></b></h3>")
-            data = ("<h3><b>" + NameData[x] + "   " + "<a href='" + LinkData[x].get("href") + "'>Submit link</a></b></h3>")
+            data = ("<h3><b>" + NameData[x] + "   " + "<a href='" + LinkData[x].get("href") + "' class='but'>Submit link</a></b></h3>")
             linklistOutput.append(data)
             print (NameData[x] + "  " + LinkData[x].get("href"))
      

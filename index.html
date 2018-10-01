@@ -1,10 +1,14 @@
 <html>
-    <body>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+    <body class="main">
 		{% if linklistOutput %}
 		{% load link_tags %}
 			<ul>
 				{% for link in linklistOutput %}
-					<li>{{ link | safe }}</li>
+					{{ link | safe }}
 					{% autoescape off %}
 						{% get_links link requests %}
 					{% endautoescape %}
